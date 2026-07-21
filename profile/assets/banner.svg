@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Easy-4-Java banner">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4a6e"/>
+      <stop offset="50%" stop-color="#0369a1"/>
+      <stop offset="100%" stop-color="#1e40af"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7dd3fc"/>
+      <stop offset="100%" stop-color="#a5f3fc"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e3a5f" stroke-width="0.5" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+
+  <!-- Document icons (representing tools) -->
+  <g transform="translate(1020, 80)" opacity="0.85">
+    <!-- Document 1: Excel -->
+    <rect x="0" y="0" width="50" height="60" rx="3" fill="#16a34a" opacity="0.85"/>
+    <text x="25" y="35" font-family="-apple-system, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" text-anchor="middle">XLS</text>
+    <!-- Document 2: PDF -->
+    <rect x="60" y="-15" width="50" height="60" rx="3" fill="#dc2626" opacity="0.85"/>
+    <text x="85" y="20" font-family="-apple-system, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" text-anchor="middle">PDF</text>
+    <!-- Document 3: DOCX -->
+    <rect x="120" y="10" width="50" height="60" rx="3" fill="#2563eb" opacity="0.85"/>
+    <text x="145" y="45" font-family="-apple-system, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" text-anchor="middle">DOC</text>
+    <!-- Document 4: OFD -->
+    <rect x="30" y="80" width="50" height="60" rx="3" fill="#0891b2" opacity="0.85"/>
+    <text x="55" y="115" font-family="-apple-system, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" text-anchor="middle">OFD</text>
+    <!-- Document 5: Auth -->
+    <rect x="90" y="95" width="50" height="60" rx="3" fill="#7c3aed" opacity="0.85"/>
+    <text x="115" y="130" font-family="-apple-system, sans-serif" font-size="14" font-weight="700"
+          fill="#ffffff" text-anchor="middle">AUTH</text>
+  </g>
+
+  <!-- Title -->
+  <text x="80" y="130" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="68" font-weight="800" fill="url(#title)" letter-spacing="-2">Easy-4-Java</text>
+
+  <!-- Subtitle -->
+  <text x="84" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="22" font-weight="400" fill="#dbeafe" letter-spacing="0.5">
+    Easy-to-use toolkits for Java ecosystem
+  </text>
+
+  <!-- Tagline -->
+  <text x="84" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+        font-size="16" font-weight="300" fill="#bfdbfe" letter-spacing="1">
+    Excel · PDF · OFD · DOCX · Sa-Token · Hutool
+  </text>
+
+  <!-- Partme-AI badge -->
+  <g transform="translate(84, 250)">
+    <rect x="0" y="0" width="240" height="34" rx="17" fill="#6366f1" opacity="0.95"/>
+    <text x="120" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+          font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle">
+      Part of partme-ai ecosystem
+    </text>
+  </g>
+
+  <rect x="0" y="316" width="1200" height="4" fill="url(#accent)"/>
+</svg>
