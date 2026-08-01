@@ -9,7 +9,7 @@
 > 当前组织下 **0 个仓库**。
 
 <p align="center">
-  <img alt="Easy-4-Java" src="./assets/banner.svg" width="800">
+  <img alt="Easy4Java Logo" src="./assets/logo-512.png" width="220">
 </p>
 
 <p align="center">
