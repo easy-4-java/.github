@@ -1,6 +1,6 @@
 # Easy-4-Java
 
-> **🧰 Java 易用工具集** —— 由 [@hiwepy](https://github.com/hiwepy) 独立开发与维护
+> **🧰 Java 易用工具集** —— 由 [@Loong Wan](https://github.com/loong10k) Fork、开发与维护
 >
 > Spring Boot Starter · 第三方服务 SDK · 框架扩展 · Prometheus 指标集成
 
@@ -19,7 +19,7 @@
 
 ## 关于本组织
 
-**Easy-4-Java** 是 [partme-ai](https://github.com/partme-ai) 开源生态下的 **Java 工具集组织**，托管由 [@hiwepy](https://github.com/hiwepy) 独立开发与维护的 Java 组件（原 `io.github.hiwepy` 系列项目迁移而来）。围绕 Spring Boot 应用开发的高频场景，提供**开箱即用的 Starter、第三方服务 SDK 与框架扩展**，目前共 **274 个公开仓库**。
+**Easy-4-Java** 是 [partme-ai](https://github.com/partme-ai) 开源生态下的 **Java 工具集组织**，托管由 [@Loong Wan](https://github.com/loong10k) Fork、开发与维护的 Java 组件（原 `io.github.hiwepy` 系列项目迁移而来）。围绕 Spring Boot 应用开发的高频场景，提供**开箱即用的 Starter、第三方服务 SDK 与框架扩展**，目前共 **274 个公开仓库**。
 
 > 📌 **重要说明**：本组织**不托管**以下常见开源项目的镜像或 fork：
 > - [`easyexcel`](https://github.com/alibaba/easyexcel) —— Alibaba 开源项目，独立维护
