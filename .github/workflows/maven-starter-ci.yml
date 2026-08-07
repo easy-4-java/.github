@@ -28,12 +28,15 @@ jobs:
           case "$VERSION_LINE" in
             2.3.x|2.7.x)
               echo "java=8" >> "$GITHUB_OUTPUT"
+              echo "compiler-release=8" >> "$GITHUB_OUTPUT"
               ;;
             3.0.x|3.1.x|3.2.x|3.3.x|3.4.x|3.5.x)
               echo "java=17" >> "$GITHUB_OUTPUT"
+              echo "compiler-release=17" >> "$GITHUB_OUTPUT"
               ;;
             4.0.x|4.1.x)
               echo "java=21" >> "$GITHUB_OUTPUT"
+              echo "compiler-release=21" >> "$GITHUB_OUTPUT"
               ;;
             *)
               echo "Unsupported version line: $VERSION_LINE" >&2
@@ -61,7 +64,10 @@ jobs:
           printf '%s' "$MAVEN_SETTINGS_XML" > "$HOME/.m2/settings.xml"
 
       - name: Build and verify
-        run: mvn -B --no-transfer-progress clean verify
+        run: >-
+          mvn -B --no-transfer-progress
+          -Dmaven.compiler.release=${{ steps.version-line.outputs.compiler-release }}
+          clean verify
 
       - name: Upload surefire reports
         if: always()
