@@ -3,6 +3,10 @@ name: Maven Starter CI
 on:
   workflow_call:
     inputs:
+      version-line:
+        description: Version line to verify when a review branch has a different name.
+        required: false
+        type: string
       java-version:
         description: Override the JDK selected for the version line.
         required: false
@@ -27,7 +31,7 @@ jobs:
       - name: Resolve version line
         id: version-line
         env:
-          VERSION_LINE: ${{ github.base_ref || github.ref_name }}
+          VERSION_LINE: ${{ inputs.version-line || github.base_ref || github.ref_name }}
           JAVA_VERSION_OVERRIDE: ${{ inputs.java-version }}
         shell: bash
         run: |
@@ -72,7 +76,7 @@ jobs:
 
       - name: Build and verify
         env:
-          VERSION_LINE: ${{ github.base_ref || github.ref_name }}
+          VERSION_LINE: ${{ inputs.version-line || github.base_ref || github.ref_name }}
         shell: bash
         run: |
           if [[ "$VERSION_LINE" == "4.1.x" ]]; then
