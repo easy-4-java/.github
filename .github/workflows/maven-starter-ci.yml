@@ -2,6 +2,15 @@ name: Maven Starter CI
 
 on:
   workflow_call:
+    inputs:
+      version-line:
+        description: Version line to verify when a review branch has a different name.
+        required: false
+        type: string
+      java-version:
+        description: Override the JDK selected for the version line.
+        required: false
+        type: string
     secrets:
       MAVEN_SETTINGS_XML:
         description: Maven settings for the Easy4J release and snapshot repositories.
@@ -22,9 +31,14 @@ jobs:
       - name: Resolve version line
         id: version-line
         env:
-          VERSION_LINE: ${{ github.base_ref || github.ref_name }}
+          VERSION_LINE: ${{ inputs.version-line || github.base_ref || github.ref_name }}
+          JAVA_VERSION_OVERRIDE: ${{ inputs.java-version }}
         shell: bash
         run: |
+          if [[ -n "$JAVA_VERSION_OVERRIDE" ]]; then
+            echo "java=$JAVA_VERSION_OVERRIDE" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           case "$VERSION_LINE" in
             2.3.x|2.7.x)
               echo "java=8" >> "$GITHUB_OUTPUT"
@@ -61,7 +75,19 @@ jobs:
           printf '%s' "$MAVEN_SETTINGS_XML" > "$HOME/.m2/settings.xml"
 
       - name: Build and verify
-        run: mvn -B --no-transfer-progress clean verify
+        env:
+          VERSION_LINE: ${{ inputs.version-line || github.base_ref || github.ref_name }}
+        shell: bash
+        run: |
+          if [[ "$VERSION_LINE" == "4.1.x" ]]; then
+            if [[ ! -x ./mvnw ]]; then
+              echo "The 4.1.x branch requires an executable Maven 4 wrapper (./mvnw)." >&2
+              exit 1
+            fi
+            ./mvnw -B --no-transfer-progress clean verify
+          else
+            mvn -B --no-transfer-progress clean verify
+          fi
 
       - name: Upload surefire reports
         if: always()
